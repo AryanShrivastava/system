@@ -5,4 +5,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', home, name='home'),
+    path('profile/', profile, name='profile')
 ]
