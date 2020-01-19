@@ -1,531 +1,225 @@
-
-@import 'https://fonts.googleapis.com/css?family=Raleway';
-
-html, body
-{
-    margin: 0px;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+ 
+* {
+    box-sizing: border-box;
 }
-
-div.container
-{
-    font-family: Raleway;
-    margin: 0 auto;
-	padding: 4em 2em;
-	text-align: center;
+ 
+body {
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
 }
-
-div.container a
-{
-    color: #FFF;
-    text-decoration: none;
-    font: 20px Raleway;
-    margin: 0px 10px;
-    padding: 10px 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
+ 
+h1 {
+    font-weight: bold;
+    margin: 0;
 }
-
-
-
-.teal
-{
-    background: #009688;
-}
-
-
-
-/* Top and Bottom borders go out */
-div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
-{
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-}
-
-div.topBotomBordersOut a:before
-{
-    top: 0px;
-    transform: translateY(10px);
-}
-
-div.topBotomBordersOut a:after
-{
-    bottom: 0px;
-    transform: translateY(-10px);
-}
-
-div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
-{
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-/* Top and Bottom borders come in */
-div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
-{
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-}
-
-div.topBotomBordersIn a:before
-{
-    top: 0px;
-    transform: translateY(-10px);
-}
-
-div.topBotomBordersIn a:after
-{
-    bottom: 0px;
-    transform: translateY(10px);
-}
-
-div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
-{
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-/* Top border go down and Left border appears */
-div.topLeftBorders a:before
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 2px;
-    height: 0px;
-    background: #FFF;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
-}
-
-div.topLeftBorders a:after
-{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 1;
-    transition: all 0.3s;
-}
-
-div.topLeftBorders a:hover:before
-{
-    height: 100%;
-}
-
-div.topLeftBorders a:hover:after
-{
-    opacity: 0;
-    top: 100%;
-}
-
-/* Circle behind */
-div.circleBehind a:before, div.circleBehind a:after
-{
-    position: absolute;
-    top: 22px;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    border: 4px solid #0277bd;
-    transform: translateX(-50%) translateY(-50%) scale(0.8);
-    border-radius: 50%;
-    background: transparent;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-    z-index: -1;
-}
-
-div.circleBehind a:after
-{
-    border-width: 2px;
-    transition: all 0.4s;
-}
-
-div.circleBehind a:hover:before
-{
-    opacity: 1;
-    transform: translateX(-50%) translateY(-50%) scale(1);
-}
-
-div.circleBehind a:hover:after
-{
-    opacity: 1;
-    transform: translateX(-50%) translateY(-50%) scale(1.3);
-}
-
-/* Brackets go out */
-div.brackets a:before, div.brackets a:after
-{
-    position: absolute;
-    opacity: 0;
-    font-size: 35px;
-    top: 0px;
-    transition: all 0.3s;
-}
-
-div.brackets a:before
-{
-    content: '(';
-    left: 0px;
-    transform: translateX(10px);
-}
-
-div.brackets a:after
-{
-    content: ')';
-    right: 0px;
-    transform: translateX(-10px);
-}
-
-div.brackets a:hover:before, div.brackets a:hover:after
-{
-    opacity: 1;
-    transform: translateX(0px);
-}
-
-
-/* Border from Y to X  */
-div.borderYtoX a:before, div.borderYtoX a:after
-{
-    position: absolute;
-    opacity: 0.5;
-    height: 100%;
-    width: 2px;
-    content: '';
-    background: #FFF;
-    transition: all 0.3s;
-}
-
-div.borderYtoX a:before
-{
-    left: 0px;
-    top: 0px;
-}
-
-div.borderYtoX a:after
-{
-    right: 0px;
-    bottom: 0px;
-}
-
-div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
-{
-    opacity: 1;
-    height: 2px;
-    width: 100%;
-}
-
-/* Border X get width  */
-div.borderXwidth a:before, div.borderXwidth a:after
-{
-    position: absolute;
-    opacity: 0;
-    width: 0%;
-    height: 2px;
-    content: '';
-    background: #FFF;
-    transition: all 0.3s;
-}
-
-div.borderXwidth a:before
-{
-    left: 0px;
-    top: 0px;
-}
-
-div.borderXwidth a:after
-{
-    right: 0px;
-    bottom: 0px;
-}
-
-div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
-{
-    opacity: 1;
-    width: 100%;
-}
-
-/* Pull down  */
-div.pullDown a:before
-{
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullDown a:hover:before
-{
-    height: 100%;
-}
-
-/* Pull up  */
-div.pullUp a:before
-{
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-    bottom: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullUp a:hover:before
-{
-    height: 100%;
-}
-
-/* Pull right  */
-div.pullRight a:before
-{
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullRight a:hover:before
-{
-    width: 100%;
-}
-
-/* Pull left  */
-div.pullLeft a:before
-{
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    right: 0px;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullLeft a:hover:before
-{
-    width: 100%;
-}
-
-/* Pull up and down  */
-div.pullUpDown a:before, div.pullUpDown a:after
-{
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullUpDown a:before
-{
-    top: 0px;
-} 
-
-div.pullUpDown a:after
-{
-    bottom: 0px;
-}
-
-div.pullUpDown a:hover:before, div.pullUpDown a:hover:after
-{
-    height: 100%;
-}
-
-/* Pull right and left  */
-div.pullRightLeft a:before, div.pullRightLeft a:after
-{
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-div.pullRightLeft a:before
-{
-    left: 0px;
-} 
-
-div.pullRightLeft a:after
-{
-    right: 0px;
-}
-
-div.pullRightLeft a:hover:before, div.pullRightLeft a:hover:after
-{
-    width: 100%;
-}
-
-/* Highlight text out  */
-div.highlightTextOut a
-{
-    color: rgba(255, 255, 255, 0.3); 
-}
-
-div.highlightTextOut a:before, div.highlightTextIn a:before
-{
-    position: absolute;
-    color: #FFF;
-    top: 0px;
-    left: 0px;
-    padding: 10px;
-    overflow: hidden;
-    content: attr(alt);
-    transition: all 0.3s;
-    transform: scale(0.8);
-    opacity: 0;
-} 
-
-div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
-{
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* Highlight text in  */
-div.highlightTextIn a
-{
-    color: rgba(0, 0, 0, 0.4); 
-}
-
-div.highlightTextIn a:before
-{
-    transform: scale(1.2);
-} 
-
-
-img {
-	width: 100%;
-	height: 400px !important;
-}
-.carousel{
-    background: #2f4357;
-    margin-top: 20px;
-}
-.carousel-item{
+ 
+h2 {
     text-align: center;
-    min-height: 500px; /* Prevent carousel from being distorted if for some reason image doesn't load */
 }
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+ 
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+ 
+span {
+    font-size: 12px;
+}
+ 
+a {
+    color: #333;
+    font-size: 14px;
     text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a green background color to the active link */
-  .navbar a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  /* Hide the link that should open and close the navbar on small screens */
-  .navbar .icon {
-    display: none;
-  }
-  body { background: #eee }
-
-.container-fluid { max-width: 1200px; }
-
-header {
-	background: #563d7c;
-	padding: 2em 1em;
-	color: #fff;
-	margin-bottom: 2em;
-	
+    margin: 15px 0;
 }
-
-.card {
-	background: #fff;
-	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-	
+ 
+button {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF; 
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
 }
-
-[class*="row"] {
-    margin-top: 4em;
-    margin-bottom: 2em;
-     margin-right: 2em;
-  justify-content: center;
+ 
+button:active {
+    transform: scale(0.95);
 }
-
-[class*="col-"] {
-	background: #efefef;
-	border: 6px solid #ddd;
-    padding-top: .75rem;
-	padding-bottom: .75rem;
-	width: 100%;
+ 
+button:focus {
+    outline: none;
 }
-.o-video {
+ 
+button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+}
+ 
+form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+ 
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
     width: 100%;
-    height: 0;
+}
+ 
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+            0 10px 10px rgba(0,0,0,0.22);
     position: relative;
-    padding-top: 56.25%; /* 9 / 16 * 100 */
-   
-  }
-  .o-video > iframe {
-    width: 80%;
-    height: 50%;
-    padding-left:22%;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+ 
+.form-container {
     position: absolute;
     top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+ 
+.sign-in-container {
     left: 0;
-    
-  }
-  
+    width: 50%;
+    z-index: 2;
+}
+ 
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+ 
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+ 
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+ 
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+     
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+ 
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+ 
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+ 
+.overlay {
+    background: #FF416C;
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+ 
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+ 
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+ 
+.overlay-left {
+    transform: translateX(-20%);
+}
+ 
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+ 
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+ 
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+ 
+.social-container {
+    margin: 20px 0;
+}
+ 
+.social-container a {
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;}
